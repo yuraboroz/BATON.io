@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BATON</title>
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff7e00;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff7e00;
+        }
+
+        /* Главный блок */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('батон.png') no-repeat center center; 
+            background-size: cover;
+            opacity: 0.9;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 6em;
+            margin-top: 50px;
+            margin-bottom: 430px;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 80px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff7e00;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff6300;
+        }
+
+        /* Цитата */
+        blockquote {
+            font-style: italic;
+            font-size: 1.8em;
+            margin: 40px 0;
+            color: #ccc;
+            text-align: center;
+        }
+
+        /* Статистика */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .stats p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .stats div {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="container">
+        <div class="logo">BATON</div>
+        <nav>
+            <ul>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#stats">Статистика</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный блок -->
+    <section class="hero container">
+        <h1>BATON</h1>
+        <p>Создан быть ценным</p>
+        <a href="#" class="btn">Узнать больше</a>
+    </section>
+
+    <!-- Цитата -->
+    <blockquote class="container">
+        "Если долго вглядываться в батон — батон начинает вглядываться в вас."
+    </blockquote>
+
+    <!-- Статистика -->
+    <section id="stats" class="stats container">
+        <div>
+            <h3>1M+</h3>
+            <p>Пользователей</p>
+        </div>
+        <div>
+            <h3>$5B</h3>
+            <p>Объем рынка</p>
+        </div>
+        <div>
+            <h3>100%</h3>
+            <p>Рост за год</p>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="container">
+        <p>&copy; 2025 BATON on TON. Все права защищены.</p>
+    </footer>
+
+    <!-- JavaScript для анимации -->
+    <script>
+        // Простая анимация появления элементов
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.hero, blockquote, .stats');
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(50px)';
+                setTimeout(() => {
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
